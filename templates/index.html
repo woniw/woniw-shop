@@ -13,5 +13,71 @@
 </head>
 <body>
 
+    <style>
+        .item_background{
+            height: 425px;
+            width:  375px;
+            background-color: rgb(50, 50, 50);
+            border-radius: 30px;
+        }
+    
+
+        .button_container{
+            margin-left: 62px;
+        }
+
+        .item_slot_to_button_gap{
+            height: 10px;
+            width: 1px;
+        }
+
+        .item_label_to_image_gap{
+            height: 10px;
+            width: 1px;
+        }
+
+        .image_to_description_gap{
+            height: 1px;
+            width: 1px;
+        }
+
+        .item_label_editor{
+            height: 50px;
+            width: 300px;
+        }
+
+        .image{
+            height: 170px;
+            width: 250px;
+            border-radius: 20px;
+        }
+    </style>
+
+    <!-- -->
+    <div class="ms-5">
+        <div class="item_background pt-3">
+            <div class="d-flex justify-content-center">
+                <div class="item_label_editor bg-light rounded-2 p-1 d-flex justify-content-center">
+                    <label for="" class="item_label fs-4">Headphones</label>
+                </div>
+            </div>
+            <div class="item_label_to_image_gap"></div>
+            <div class="image_container d-flex justify-content-center">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fonearena.com%2Fblog%2Fwp-content%2Fuploads%2F2022%2F11%2FNoise-Two-Wireless-Headphones.jpg&f=1&nofb=1&ipt=deedaed3634cf3564c2ac301c1e4b98ccfe4bb83ec3d53909cb4ecbbf1a361c8" class="image">
+            </div>
+            <div class="image_to_description_gap"></div>
+            <div class="description_text p-4">
+                <label class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nemo at quia natus consequuntur velit, veniam, cum consequatur accusantium quod placeat omnis expedita minima eaque praesentium quidem repudiandae fugiat voluptatem?</label>
+            </div>
+            
+        </div>
+
+        <div class="item_slot_to_button_gap bg-danger"></div>
+        <div class="button_container">
+            <button class="btn btn-dark fs-5">Buy Now</button>
+            <button class="btn btn-dark fs-5">Add to Cart</button>
+        </div>
+    </div>
+
 </body>
 </html>
