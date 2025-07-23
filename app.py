@@ -14,11 +14,21 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     balance = data['balance']
-    return render_template("index.html")
+    return render_template("index.html", balance=balance) 
 
 @app.route("/dummy_site")
 def dummy_site():
     return render_template("dummy_site.html")
+
+@app.route('/buy_now_page')
+def buy_now_page():
+    item_purchase = data['temp_buy_now']['current_Item']
+    item_price = data['temp_buy_now']["price"]
+
+    print(f'{bright_blue}LOG: {item_purchase}')
+    print(f'{bright_blue}LOG: {item_price}')
+
+    return render_template("buy_now_page.html", item_purchase=item_purchase, item_price=item_price)
 
 @app.route('/headphones_buy_now_button', methods=['POST', "GET"])
 def headphones_buy_now_button():
@@ -43,6 +53,6 @@ def clear_temp_json():
         return render_template("index.html")
     else:
         return render_template("index.html")
-        
+
 if __name__ == "__main__":
     app.run(debug=True)

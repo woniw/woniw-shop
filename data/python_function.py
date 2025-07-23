@@ -34,4 +34,4 @@ def clear_temp_buy_now():
     data['temp_buy_now']["price"] = 0
 
     save_json("data.json", data)
-    print(f"{bright_green} json cleared")
+    print(f"json cleared")
