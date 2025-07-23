@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify, url_for, redirect
-from data.python_static_functions.py import save_json
 from data.variables import data
 from data.variables import bright_red
 from data.variables import bright_green
 from data.variables import bright_blue 
 from data.variables import bright_yellow
+from data.python_function import save_json
 
 print(f"{bright_blue} LOG: {data}")
 
