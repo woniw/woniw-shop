@@ -141,6 +141,15 @@
                 <button class="about_button fs-4 ms-2">About</button>
             </a>
         </div>
+
+        <div class="nav_bar_button_gaps"></div>
+        <div class="test_button_container">
+            <form method="POST", action="{{url_for('clear_temp_json')}}">
+                <button class="test_button fs-4 ms-2">test</button>
+            </form>
+        </div>
+
+
         <div class="button_to_balance_gap"></div>
         <div class="nav_bar_balance fs-4 text-end">
             <label>Balance: {{Balance}}</label>

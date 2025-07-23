@@ -5,6 +5,7 @@ from data.variables import bright_green
 from data.variables import bright_blue 
 from data.variables import bright_yellow
 from data.python_function import save_json
+import logging
 
 print(f"{bright_blue} LOG: {data}")
 
@@ -33,5 +34,15 @@ def headphones_buy_now_button():
     else:
         return redirect(url_for("index"))
 
+@app.route('/clear_temp_json', methods=["POST", "GET"])
+def clear_temp_json():
+    if request.method == 'POST':
+        from data.python_function import clear_temp_buy_now
+        clear_temp_buy_now()
+        print(f'{bright_green}CLEARED!')
+        return render_template("index.html")
+    else:
+        return render_template("index.html")
+        
 if __name__ == "__main__":
     app.run(debug=True)
