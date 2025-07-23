@@ -1,4 +1,4 @@
-from data.python_json import load_json
+from data.python_static_functions.py import load_json
 data = load_json("data.json")
 
 # Text colors

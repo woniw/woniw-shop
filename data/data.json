@@ -1,6 +1,8 @@
-{   
+{
+    "temp_buy_now": {
+        "current_Item": "headphones",
+        "price": 250
+    },
     "balance": 1000,
-    "cart":{
-        
-    }
+    "cart": {}
 }

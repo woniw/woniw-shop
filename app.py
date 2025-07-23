@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, url_for, redirect
+from data.python_static_functions.py import save_json
 from data.variables import data
 from data.variables import bright_red
 from data.variables import bright_green
@@ -22,7 +23,12 @@ def dummy_site():
 def headphones_buy_now_button():
 
     if request.method == "POST":
-        print(f"{bright_yellow}LOG: working")
+        data['temp_buy_now']["current_Item"] = "headphones"
+        data['temp_buy_now']["price"] = 250
+
+        save_json("data.json", data)
+        print(f"{bright_green} json saved!")
+
         return redirect(url_for("index"))
     else:
         return redirect(url_for("index"))

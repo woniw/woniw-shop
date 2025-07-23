@@ -28,3 +28,10 @@ def save_json(filename, data):
         print(f"[!] Error saving data to {filename}: {e}")
 
 
+def clear_temp_buy_now():
+    from data.variables import data
+    data['temp_buy_now']["current_Item"] = ""
+    data['temp_buy_now']["price"] = 0
+
+    save_json("data.json", data)
+    print(f"{bright_green} json cleared")
