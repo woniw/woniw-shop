@@ -72,6 +72,10 @@
             width: 20px;
             height: 1px;
         }
+
+        .button_to_balance_gap{
+            width: 1000px;
+        }
     </style>
 
     <!-- -->
@@ -98,8 +102,13 @@
 
         <div class="item_slot_to_button_gap bg-danger"></div>
         <div class="button_container">
-            <button class="btn btn-dark fs-5">Buy Now</button>
-            <button class="btn btn-dark fs-5">Add to Cart</button>
+
+            <form method="POST" action="{{url_for('headphones_buy_now_button')}}">
+                <button class="btn btn-dark" type="submit">
+                    <label class="fs-5 text text-light">Buy Now</label>
+                </button>
+            </form>
+
         </div>
     </div>
 
@@ -131,6 +140,10 @@
             <a href="">
                 <button class="about_button fs-4 ms-2">About</button>
             </a>
+        </div>
+        <div class="button_to_balance_gap"></div>
+        <div class="nav_bar_balance fs-4 text-end">
+            <label>Balance: {{Balance}}</label>
         </div>
     </div>
 
