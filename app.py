@@ -16,14 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    cart_url = url_for("cart_page")
-    return render_template("index.html", balance=data['balance'], cart_url=cart_url) 
-
-@app.route('/cart_page')
-def cart_page():
-    index_url = url_for("index")
-    return render_template("cart_page.html", index_url=index_url)
-
+    return render_template("index.html", balance=data['balance']) 
 
 @app.route("/cancel_payment")
 def cancel_payment():
@@ -92,27 +85,7 @@ def headphones_buy_now_button():
     else:
         return redirect(url_for("index"))
 
-@app.route('/headphones_add_to_card_button')
-def headphones_add_to_card_button():
 
-    data['temp_buy_now']["current_Item"] = "headphones"
-    data['temp_buy_now']["price"] = 250
-
-    save_json("data.json", data)
-    print(f"{bright_green} json saved!")
-
-    current_item =  data['temp_buy_now']["current_Item"]
-    current_item_price = data['temp_buy_now']["price"]
-
-    data['cart'] = {
-        f"{current_item}": {
-            "price": f"{current_item_price}",
-            "item_id": 1
-        }
-    }
-    save_json("data.json", data)
-
-    return redirect(url_for("cart_page"))
 
 @app.route('/clear_temp_json', methods=["POST", "GET"])
 def clear_temp_json():
