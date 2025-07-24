@@ -5,6 +5,7 @@ from data.variables import bright_green
 from data.variables import bright_blue 
 from data.variables import bright_yellow
 from data.variables import bright_magenta
+from data.variables import bright_white
 from data.python_function import save_json
 import logging
 
@@ -12,6 +13,7 @@ print(f"{bright_blue} LOG: {data}")
 
 app = Flask(__name__)
 
+print()
 @app.route('/')
 def index():
     balance = data['balance']
@@ -91,14 +93,31 @@ def clear_temp_json():
     if request.method == 'POST':
         from data.python_function import clear_temp_buy_now
         clear_temp_buy_now()
+
         print(f'{bright_green}CLEARED!')
 
-        data['balance'] == 1000
-        
         save_json("data.json", data)
         return render_template("index.html")
     else:
         return render_template("index.html")
+
+@app.route("/reset_balance")
+def reset_balance():
+    from data.python_function import save_json
+
+    print(f'{bright_magenta}balance: {data['balance']}')
+    save_json("data.json", data) 
+
+    data['balance'] -= data['balance']
+    print(f'{bright_magenta}balance: {data['balance']}')
+    save_json("data.json", data)
+
+    data['balance'] += 1000
+    print(f'{bright_magenta}balance: {data['balance']}')
+    save_json("data.json", data)
+    
+    print(f"{bright_magenta}WORKING")
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

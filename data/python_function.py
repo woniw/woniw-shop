@@ -32,6 +32,6 @@ def clear_temp_buy_now():
     from data.variables import data
     data['temp_buy_now']["current_Item"] = ""
     data['temp_buy_now']["price"] = 0
-
+    
     save_json("data.json", data)
     print(f"json cleared")
