@@ -78,6 +78,10 @@
         .button_to_balance_gap{
             width: 900px;
         }
+
+        .buy_now_and_add_cart_span{
+            margin-left: 50px;
+        }
     </style>
 
     <!-- -->
@@ -102,17 +106,24 @@
             
         </div>
 
-        <div class="item_slot_to_button_gap bg-danger"></div>
-        <div class="button_container">
+        <div class="item_slot_to_button_gap"></div>
 
-            <form method="POST" action="{{url_for('headphones_buy_now_button')}}">
-                <button class="btn btn-dark" type="submit">
-                    <label class="fs-5 text text-light">Buy Now</label>
-                </button>
-            </form>
+            <span class="buy_now_and_add_cart_span d-flex gap-3">
+                <form method="POST" action="{{url_for('headphones_buy_now_button')}}">
+                    <button class="btn btn-dark" type="submit">
+                        <label class="fs-5 text text-light">Buy Now</label>
+                    </button>
+                </form>
 
-        </div>
-    </div>
+                <form action="{{url_for('headphones_add_to_card_button')}}">
+                    <button class="btn btn-dark" type="submit">
+                        <label class="fs-5 text text-light">Add To Cart</label>
+                    </button>
+                </form>
+            </span>
+    
+
+
 
     
     <div class="item_to_nav_bar_gap"></div>
@@ -120,11 +131,13 @@
     <div class="bottom_navigation_bar d-flex align-items-center">
     <!-- BUTTONS -->
         <div class="nav_bar_button_gaps"></div>
+
         <div class="cart_button_container">
-            <a href="">
+            <a href="{{cart_url}}">
                 <button class="cart_button fs-4 ms-2">Cart</button>
             </a>
         </div>
+
         <div class="nav_bar_button_gaps"></div>
         <div class="account_button_container">
             <a href="">
@@ -147,7 +160,7 @@
         <div class="nav_bar_button_gaps"></div>
         <div class="test_button_container">
             <form method="POST", action="{{url_for('clear_temp_json')}}">
-                <button class="test_button fs-4 ms-2">test</button>
+                <button class="test_button fs-4 ms-2">clear</button>
             </form>
         </div>
 
