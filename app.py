@@ -15,20 +15,22 @@ app = Flask(__name__)
 def index():
     balance = data['balance']
     return render_template("index.html", balance=balance) 
-
-@app.route("/dummy_site")
-def dummy_site():
-    return render_template("dummy_site.html")
+2
+@app.route("/cancel_payment")
+def cancel_payment():
+    index_url = url_for("index")
+    return render_template("cancel_payment.html", index_url=index_url)
 
 @app.route('/buy_now_page')
 def buy_now_page():
     item_purchase = data['temp_buy_now']['current_Item']
     item_price = data['temp_buy_now']["price"]
+    cancel_payment_url = url_for("cancel_payment")
 
     print(f'{bright_blue}LOG: {item_purchase}')
     print(f'{bright_blue}LOG: {item_price}')
 
-    return render_template("buy_now_page.html", item_purchase=item_purchase, item_price=item_price)
+    return render_template("buy_now_page.html", item_purchase=item_purchase, item_price=item_price, cancel_payment_url=cancel_payment_url)
 
 @app.route('/headphones_buy_now_button', methods=['POST', "GET"])
 def headphones_buy_now_button():
@@ -40,7 +42,7 @@ def headphones_buy_now_button():
         save_json("data.json", data)
         print(f"{bright_green} json saved!")
 
-        return redirect(url_for("index"))
+        return redirect(url_for("buy_now_page"))
     else:
         return redirect(url_for("index"))
 

@@ -44,11 +44,11 @@
             <div class="info_container p-5">
 
                 <div class="item_to_purchase_container">
-                    <label class="fs-5">Item To Purchase: {{item_purchase}}</label>
+                    <label class="fs-5">Item To Purchase: <strong>{{item_purchase}}</strong></label>
                 </div>
 
                 <div class="item_priace_container">
-                    <label class="fs-5">Total: {{item_buy}}</label>
+                    <label class="fs-5">Total: <strong>${{item_price}}</strong></label>
                 </div>
 
                 <div class="card_number">
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="card_holder">
-                    <label class="fs-5">Cardholder Name: John Doe</label>
+                    <label class="fs-5">Cardholder Name: Strüghen Läghurn</label>
                 </div>
 
                 <div class="payment_network">
@@ -72,8 +72,11 @@
                 <div class="button_container d-flex justify-content-center">
 
                     <span class="cancel_payment_div">
-                        <button class="btn btn-light fs-5">Cancel</button>
+                        <a href="{{cancel_payment_url}}">
+                            <button class="btn btn-light fs-5">Cancel</button>
+                        </a>
                     </span>
+
                     <div class="button_gap"></div>
                     <span class="confirm_payment">
                         <button class="btn btn-light fs-5">Confirm</button>
