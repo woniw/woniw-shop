@@ -23,7 +23,8 @@ def cancel_payment():
 
 @app.route('/payment_confirmed')
 def payment_confirmed():
-    return render_template("payment_confirmed.html")
+    index_url = url_for("index")
+    return render_template("payment_confirmed.html", index_url=index_url)
 
 @app.route('/buy_now_page')
 def buy_now_page():
