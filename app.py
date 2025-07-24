@@ -15,11 +15,15 @@ app = Flask(__name__)
 def index():
     balance = data['balance']
     return render_template("index.html", balance=balance) 
-2
+
 @app.route("/cancel_payment")
 def cancel_payment():
     index_url = url_for("index")
     return render_template("cancel_payment.html", index_url=index_url)
+
+@app.route('/payment_confirmed')
+def payment_confirmed():
+    return render_template("payment_confirmed.html")
 
 @app.route('/buy_now_page')
 def buy_now_page():
@@ -31,6 +35,14 @@ def buy_now_page():
     print(f'{bright_blue}LOG: {item_price}')
 
     return render_template("buy_now_page.html", item_purchase=item_purchase, item_price=item_price, cancel_payment_url=cancel_payment_url)
+
+@app.route("/confirm_payment", methods=['POST', 'GET'])
+def confirm_payment():
+    if request.method == "POST":
+        return redirect(url_for("payment_confirmed"))
+    else:
+        return redirect(url_for("index"))
+
 
 @app.route('/headphones_buy_now_button', methods=['POST', "GET"])
 def headphones_buy_now_button():

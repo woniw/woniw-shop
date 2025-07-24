@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="card_holder">
-                    <label class="fs-5">Cardholder Name: Strüghen Läghurn</label>
+                    <label class="fs-5">Cardholder Name: Daniel Stinks</label>
                 </div>
 
                 <div class="payment_network">
@@ -78,9 +78,12 @@
                     </span>
 
                     <div class="button_gap"></div>
-                    <span class="confirm_payment">
-                        <button class="btn btn-light fs-5">Confirm</button>
-                    </span>
+
+                    <form method="POST" action="{{url_for('confirm_payment')}}">
+                        <span class="confirm_payment">
+                            <button class="btn btn-light fs-5">Confirm</button>
+                         </span>
+                    </form>
 
                 </div>
             </div>
