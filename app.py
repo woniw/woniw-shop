@@ -86,6 +86,20 @@ def headphones_buy_now_button():
         return redirect(url_for("index"))
 
 
+@app.route('/optimus_buy_now_button', methods=['POST', "GET"])
+def optimus_buy_now_button():
+
+    if request.method == "POST":
+        data['temp_buy_now']["current_Item"] = "optimus prime"
+        data['temp_buy_now']["price"] = 20000
+
+        save_json("data.json", data)
+        print(f"{bright_green} json saved!")
+
+        return redirect(url_for("buy_now_page"))
+    else:
+        return redirect(url_for("index"))
+
 
 @app.route('/clear_temp_json', methods=["POST", "GET"])
 def clear_temp_json():

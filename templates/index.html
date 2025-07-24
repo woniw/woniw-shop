@@ -15,7 +15,7 @@
 
     <style>
         .item_background{
-            height: 505px;
+            height: 524px;
             width:  375px;
             background-color: rgb(50, 50, 50);
             border-radius: 30px;
@@ -23,15 +23,6 @@
             border-color :rgb(17, 11, 11);
         }
     
-
-        .button_container{
-            margin-left: 62px;
-        }
-
-        .item_slot_to_button_gap{
-            height: 10px;
-            width: 1px;
-        }
 
         .item_label_to_image_gap{
             height: 10px;
@@ -64,7 +55,6 @@
             width: 1px;
         }
 
-
         .nav_bar_button_gaps{
             width: 20px;
             height: 1px;
@@ -73,42 +63,85 @@
         .button_to_balance_gap{
             width: 900px;
         }
-
-
+        .buy_now_div{
+            margin-left: 130px;
+        }
+        .item_gaps{
+            width: 20px;
+        }
     </style>
 
     <!-- -->
-    <div class="ms-5">
-        <div class="item_background pt-3">
-            <div class="d-flex justify-content-center">
-                <div class="item_label_editor bg-light rounded-2 p-1 d-flex justify-content-center">
-                    <label for="" class="item_label fs-4">Headphones</label>
+
+    <span class="d-flex">
+             <!--Headphones-->
+            <div class="item_background pt-3">
+                <div class="d-flex justify-content-center">
+                    <div class="item_label_editor bg-light rounded-2 p-1 d-flex justify-content-center">
+                        <label for="" class="item_label fs-4">Headphones</label>
+                    </div>
+                </div>
+                <div class="item_label_to_image_gap"></div>
+                <div class="image_container d-flex justify-content-center">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fonearena.com%2Fblog%2Fwp-content%2Fuploads%2F2022%2F11%2FNoise-Two-Wireless-Headphones.jpg&f=1&nofb=1&ipt=deedaed3634cf3564c2ac301c1e4b98ccfe4bb83ec3d53909cb4ecbbf1a361c8" class="image">
+                </div>
+                <div class="image_to_description_gap"></div>
+                <div class="price_container d-flex justify-content-center">
+                    <label class="fs-5">250$</label>
+                </div>
+                <div class="description_text p-4">
+                    <label class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nemo at quia natus consequuntur velit, veniam, cum consequatur accusantium quod placeat omnis expedita minima eaque praesentium quidem repudiandae fugiat voluptatem?</label>
+                </div>
+
+                <div class="button_div d-flex justify-content-center">
+                    <form method="POST" action="{{url_for('headphones_buy_now_button')}}">
+                        <button class="btn btn-dark" type="submit">
+                            <label class="fs-5 text text-light">Buy Now</label>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="item_label_to_image_gap"></div>
-            <div class="image_container d-flex justify-content-center">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fonearena.com%2Fblog%2Fwp-content%2Fuploads%2F2022%2F11%2FNoise-Two-Wireless-Headphones.jpg&f=1&nofb=1&ipt=deedaed3634cf3564c2ac301c1e4b98ccfe4bb83ec3d53909cb4ecbbf1a361c8" class="image">
+
+            <div class="item_gaps"></div>
+
+             <!--OPTIMUS PRIME-->
+            <div class="item_background pt-3">
+                <div class="d-flex justify-content-center">
+                    <div class="item_label_editor bg-light rounded-2 p-1 d-flex justify-content-center">
+                        <label for="" class="item_label fs-4">Optimus Prime</label>
+                    </div>
+                </div>
+                <div class="item_label_to_image_gap"></div>
+                <div class="image_container d-flex justify-content-center">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2F4k-ultra-hd-transformers-optimus-prime-posing-rknmf5jm1gpld2n3.jpg&f=1&nofb=1&ipt=6fc82018847cab8faa41cfe44f00eae6cbb7a9934930b3a9bf9e88123e6dace1" class="image">
+                </div>
+                <div class="image_to_description_gap"></div>
+                <div class="price_container d-flex justify-content-center">
+                    <label class="fs-5">20,000$</label>
+                </div>
+                <div class="description_text p-4">
+                    <label class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nemo at quia natus consequuntur velit, veniam, cum consequatur accusantium quod placeat omnis expedita minima eaque praesentium quidem repudiandae fugiat voluptatem?</label>
+                </div>
+
+                <div class="button_div d-flex justify-content-center">
+                    <form method="POST" action="{{url_for('optimus_buy_now_button')}}">
+                        <button class="btn btn-dark" type="submit">
+                            <label class="fs-5 text text-light">Buy Now</label>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="image_to_description_gap"></div>
-            <div class="price_container d-flex justify-content-center">
-                <label class="fs-5">250$</label>
-            </div>
-            <div class="description_text p-4">
-                <label class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nemo at quia natus consequuntur velit, veniam, cum consequatur accusantium quod placeat omnis expedita minima eaque praesentium quidem repudiandae fugiat voluptatem?</label>
-            </div>
+
             
-        </div>
+            <div class=" "></div>
+    </span>
 
-        <div class="item_slot_to_button_gap"></div>
 
-            <span class="buy_now_and_add_cart_span d-flex gap-3">
-                <form method="POST" action="{{url_for('headphones_buy_now_button')}}">
-                    <button class="btn btn-dark" type="submit">
-                        <label class="fs-5 text text-light">Buy Now</label>
-                    </button>
-                </form>
-            </span>
-    
+
+
+
+
+
 
 
 
