@@ -3,12 +3,13 @@
         "current_Item": "",
         "price": 0
     },
-    "balance": 1000,
-    "cart": {
+    "balance": 0,
+    "items": {
         "headphones": {
-            "price": "250",
-            "item_id": 1
+            "price": 250
+        },
+        "optimus_prime": {
+            "price": 2000
         }
-    },
-    "orders": {}
+    }
 }

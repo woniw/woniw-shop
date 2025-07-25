@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <title>Woniw Shop</title>
+    <title>Woniw Wonders</title>
 
     <div class="center_continer d-flex justify-content-center">
         <label class="fs-1 text-light">Woniw Wonders</label>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="image_to_description_gap"></div>
                 <div class="price_container d-flex justify-content-center">
-                    <label class="fs-5">250$</label>
+                    <label class="fs-5">$250</label>
                 </div>
                 <div class="description_text p-4">
                     <label class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nemo at quia natus consequuntur velit, veniam, cum consequatur accusantium quod placeat omnis expedita minima eaque praesentium quidem repudiandae fugiat voluptatem?</label>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="image_to_description_gap"></div>
                 <div class="price_container d-flex justify-content-center">
-                    <label class="fs-5">20,000$</label>
+                    <label class="fs-5">$2000</label>
                 </div>
                 <div class="description_text p-4">
                     <label class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nemo at quia natus consequuntur velit, veniam, cum consequatur accusantium quod placeat omnis expedita minima eaque praesentium quidem repudiandae fugiat voluptatem?</label>
@@ -139,13 +139,6 @@
 
 
 
-
-
-
-
-
-
-    
     <div class="item_to_nav_bar_gap"></div>
 
     <div class="bottom_navigation_bar d-flex align-items-center">
@@ -155,33 +148,22 @@
         <div class="nav_bar_button_gaps"></div>
         <div class="account_button_container">
             <a href="">
-                <button class="account_button fs-4 ms-2">Account</button>
+                <button class="account_button fs-5 ms-2 btn btn-light">Account</button>
             </a>
         </div>
         <div class="nav_bar_button_gaps"></div>
-        <div class="orders_button_container">
-            <a href="">
-                <button class="orders_button fs-4 ms-2">Orders</button>
-            </a>
-        </div>
-        <div class="nav_bar_button_gaps"></div>
-        <div class="about_button_container">
-            <a href="">
-                <button class="about_button fs-4 ms-2">About</button>
-            </a>
-        </div>
 
         <div class="nav_bar_button_gaps"></div>
-        <div class="test_button_container">
-            <form method="POST", action="{{url_for('clear_temp_json')}}">
-                <button class="test_button fs-4 ms-2">clear</button>
+        <div class="about_button_container">
+            <form action="{{url_for('redirect_to_about_page')}}">
+                <button class="about_button fs-5 ms-2 btn btn-light">About</button>
             </form>
         </div>
 
         <div class="nav_bar_button_gaps"></div>
         <div class="test_button_container">
             <form action='{{url_for("reset_balance")}}'>
-                <button class="test_button fs-4 ms-2">Reset</button>
+                <button class="test_button fs-5 ms-2 btn btn-light">Add Money</button>
             </form>
         </div>
 

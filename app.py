@@ -42,6 +42,12 @@ def buy_now_page():
 
     return render_template("buy_now_page.html", item_purchase=item_purchase, item_price=item_price, cancel_payment_url=cancel_payment_url)
 
+@app.route('/about_page')
+def about_page():
+    index_url = url_for("index")
+    
+    return render_template("about.html", index_url=index_url)
+
 @app.route("/confirm_payment", methods=['POST', 'GET'])
 def confirm_payment():
     if request.method == "POST":
@@ -69,6 +75,11 @@ def confirm_payment():
             return redirect(url_for("insufficent_funds"))
 
 
+@app.route('/redirect_to_about_page')
+def redirect_to_about_page():
+    print("ABOUT BUTTON DETECTED")
+    return redirect(url_for("about_page"))
+
 #! ITEM FUNCTIONS
 #? ----------------------------------------------------
 @app.route('/headphones_buy_now_button', methods=['POST', "GET"])
@@ -76,7 +87,7 @@ def headphones_buy_now_button():
 
     if request.method == "POST":
         data['temp_buy_now']["current_Item"] = "headphones"
-        data['temp_buy_now']["price"] = 250
+        data['temp_buy_now']["price"] = data['items']['headphones']["price"]
 
         save_json("data.json", data)
         print(f"{bright_green} json saved!")
@@ -91,7 +102,7 @@ def optimus_buy_now_button():
 
     if request.method == "POST":
         data['temp_buy_now']["current_Item"] = "optimus prime"
-        data['temp_buy_now']["price"] = 20000
+        data['temp_buy_now']["price"] = data['items']['optimus_prime']["price"]
 
         save_json("data.json", data)
         print(f"{bright_green} json saved!")
@@ -101,29 +112,12 @@ def optimus_buy_now_button():
         return redirect(url_for("index"))
 
 
-@app.route('/clear_temp_json', methods=["POST", "GET"])
-def clear_temp_json():
-    if request.method == 'POST':
-        from data.python_function import clear_temp_buy_now
-        clear_temp_buy_now()
-
-        print(f'{bright_green}CLEARED!')
-
-        save_json("data.json", data)
-        return render_template("index.html", balance=data['balance'])
-    else:
-        return render_template("index.html", balance=data['balance'])
-
 @app.route("/reset_balance")
 def reset_balance():
     from data.python_function import save_json
 
     print(f'{bright_magenta}balance: {data['balance']}')
     save_json("data.json", data) 
-
-    data['balance'] -= data['balance']
-    print(f'{bright_magenta}balance: {data['balance']}')
-    save_json("data.json", data)
 
     data['balance'] += 1000
     print(f'{bright_magenta}balance: {data['balance']}')
