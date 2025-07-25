@@ -1,9 +1,9 @@
 {
     "temp_buy_now": {
-        "current_Item": "Shayan",
-        "price": 1242
+        "current_Item": "",
+        "price": 0
     },
-    "balance": 1041,
+    "balance": 42,
     "items": {
         "headphones": {
             "price": 250
