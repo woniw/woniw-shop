@@ -1,15 +1,42 @@
 {
     "temp_buy_now": {
-        "current_Item": "",
-        "price": 0
+        "current_Item": "Shayan",
+        "price": 1242
     },
-    "balance": 0,
+    "balance": 1041,
     "items": {
         "headphones": {
             "price": 250
         },
         "optimus_prime": {
             "price": 2000
+        },
+        "Iman": {
+            "price": 67
+        },
+        "gems": {
+            "price": 10
+        },
+        "mighty_miner": {
+            "price": 12
+        },
+        "amin": {
+            "price": 999
+        },
+        "shiny amin": {
+            "price": 1999
+        },
+        "mikael": {
+            "price": 67
+        },
+        "homad": {
+            "price": 800
+        },
+        "opp detector": {
+            "price": 5000
+        },
+        "shayan": {
+            "price": 1242
         }
     }
 }
