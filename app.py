@@ -252,6 +252,19 @@ def shayan_buy_now_button():
     else:
         return redirect(url_for("index"))
 
+@app.route('/ahmad_buy_now_button', methods=['POST', "GET"])
+def ahmad_buy_now_button():
+    if request.method == "POST":
+        data['temp_buy_now']["current_Item"] = "Ahmad"
+        data['temp_buy_now']["price"] = data['items']['ahmad']["price"]
+
+        save_json("data.json", data)
+        print(f"{bright_green} json saved!")
+
+        return redirect(url_for("buy_now_page"))
+    else:
+        return redirect(url_for("index"))
+
 
 #! OTHER FUNCTIONS
 @app.route("/reset_balance")
